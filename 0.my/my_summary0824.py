@@ -384,6 +384,15 @@ a = "@"  # " "으로 바꾸면 완성
 b = "*"
 for i in range(1, 6):
     print(f"{a * (5-i)}{b * (2*i-1)}")
-
+#%%
+m = 9
+for n in range(1,10,2):
+    x = (m-n) //2
+    print(f'x({x}) :"', end ='')
+    for y in range(x):     # 공백
+        print(" ", end='')
+    for y in range(n):    # 별
+        print("*", end ="")
+    print()
 
 
