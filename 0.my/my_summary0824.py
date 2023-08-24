@@ -387,7 +387,7 @@ for i in range(1, 6):
 #%%
 m = 9
 for n in range(1,10,2):
-    x = (m-n) //2
+    x = (m-n) //2          # 공백개수
     print(f'x({x}) :"', end ='')
     for y in range(x):     # 공백
         print(" ", end='')
