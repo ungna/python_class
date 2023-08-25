@@ -283,6 +283,32 @@ soundwonder(words = words, callback = wonder)
 
 soundwonder(words, lambda word : word.capitalize() + '!')
 
+#%% 함수형 프로그래밍
+
+def score(name):  # 외부함수
+    print(f'[score]name: [{name}]')
+
+    
+    def minmax(*args): # 내부함수  # callback은 값이 밖에서 안으로 오지만 이건 값을 내부에서 밖으로 보냄
+        min = -1  # 점수의 최소값이 0이니까 0이나오더라도 val로 바꿔지게 
+        max = -1
+        
+        for val in args:
+            if min == -1 or val < min:
+                min = val
+            if max == -1 or val > max:
+                max = val            
+        return name, min, max  # 외부함수에서 받은 값
+    
+    return minmax  # 내부함수를 리턴
+
+s1 = score("중간고사")  # s1을 호출하면 이떄 부여한 값(중간고사)을 계속 가지고 있음
+s2 = score("기말고사")  # s2도 마찬가지
+
+print("중간고사 점수(최소값, 최대값)", s1(100, 90, 60, 70, 80))
+print("기말고사 점수(최소값, 최대값)", s2(88, 99, 77, 66, 55, 44))
+
+
 
 
 
