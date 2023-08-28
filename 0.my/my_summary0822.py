@@ -4,11 +4,11 @@
 a = 10
 b = 20
 c = a+b
-print('a+b = ,' c)
+print('a+b =' , c)
 
 # 빼기(-)
 d = b-a
-print('b-a = ,' d)
+print('b-a =' , d)
 
 #%%
 # 곱하기(*)
