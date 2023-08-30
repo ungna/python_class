@@ -99,9 +99,9 @@ while len(result) < 6:
 print(result)
 #%%
 # 내번호 for사용
-###############################################
-###### 바로탈락만되고 continue가 안됨  ########
-###############################################
+#############################################
+###### 바로탈락만되고 continue가 안됨  ######
+#############################################
 for i in range(1,7):
     a = int(input(f'{i}번째: 1 ~ 45 사이의 값을 입력하세요:'))
     if a > 45 or a <= 0:  # 1~45
@@ -115,7 +115,8 @@ print(my_num)
 
 #%%
 # 당첨확인 sorted 없이
-my_num = [39, 11, 8, 30, 2]
+result = [11, 39, 8, 30, 1, 2]
+my_num = [39, 11, 8, 30, 2, 10]
 for i in range(1,len(result)):
     # 길이가 같은지 6개 뽑아야되는데 그 이상이나 이하면은 바로 탈락
     if len(result) == len(my_num):
@@ -125,10 +126,10 @@ for i in range(1,len(result)):
         break
     
     # 로또번호가 같은지 
-    if result[i] in my_num:
-        print("참임")
+    if my_num[i] in result:    
+        print("참임", my_num[i])
     else: 
-        print("거짓임")
+        print("거짓임", my_num[i])
     
 
 
