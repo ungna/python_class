@@ -10,6 +10,7 @@ import re
 # match  vs search
 # match는 처음 시작하는 부분이 일치하는지 확인하고 그 단어를 줌
 # search는 어느 위치에 있던 처음만난거를 찾음
+# match든 search든 하나만 찾지만 여러개 찾으려면 findall을 써야됨 - 010.collections.Counter 에서 사용한 예제있음
 
 p = re.compile("[a-z]+") 
 
