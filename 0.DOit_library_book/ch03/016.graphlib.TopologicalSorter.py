@@ -10,4 +10,23 @@ from graphlib import TopologicalSorter
 #                -> 영어문법 -> 영어고급
 #                         -> 영어회화
 
-dkwlr aldhks
+
+ts = TopologicalSorter()
+
+# 규칙1
+ts.add('영어중급', '영어초급')  # 중급 선수과목은 초급
+ts.add('영어고급', '영어중급')  # 고급 선수과목은 중급
+
+# 규칙2 
+ts.add('영어문법', '영어중급')  # 문법 선수과목은 중급
+ts.add('영어고급', '영어문법')  # 고급 선수과목은 문법
+
+# 규칙3
+ts.add('영어회화', '영어문법')
+
+# 다음 순서대로 수강하면된다
+print(list(ts.static_order()))
+
+#%%
+# 선행노드를 여러개 추가
+ts.add('영어고급', '영어중급', '영어문법')  # 고급의 선수과목은 중급, 문법
