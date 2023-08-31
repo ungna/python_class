@@ -70,7 +70,6 @@ while i < 6:
     i += 1    # continue하면 +1 안되게 젤 밑으로
   
 
-
 # 당첨확인 sorted사용
 result = sorted(result)
 my_num = sorted(my_num)
@@ -96,24 +95,29 @@ while len(result) < 6:
     if num not in result:
         result.append(num)
     
-print(result)
-#%%
+# print(result)
+
 # 내번호 for사용
-#############################################
-###### 바로탈락만되고 continue가 안됨  ######
-#############################################
+'''
+# 굳이 for에서 continue할 이유가없긴함
+어떤 빡대가리새끼가 계속 잘못넣어서 언제까지 반복 계속할줄알고
+걍 관대하게 무한반복하는건 while쓰고 빡대가리새끼 처벌하는거는 
+횟수제한하는 for로 혼내버리자
+'''
+
 for i in range(1,7):
     a = int(input(f'{i}번째: 1 ~ 45 사이의 값을 입력하세요:'))
     if a > 45 or a <= 0:  # 1~45
         print("잘못된 번호 입력 자동탈락")
-        continue
+        break
     elif a in my_num: # 중복이 안되게
         print("중복된 번호 입력 자동탈락")
-        continue
+        break
     my_num.append(a)
-print(my_num)
+    
+# print(my_num)
 
-#%%
+
 # 당첨확인 sorted 없이
 result = [11, 39, 8, 30, 1, 2]
 my_num = [39, 11, 8, 30, 2, 10]
