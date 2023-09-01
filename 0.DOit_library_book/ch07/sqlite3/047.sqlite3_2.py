@@ -21,21 +21,32 @@ for d in data:
     
 conn.close()
 
+
 #%%
+# 각종 쿼리 넣어보기
+
 import sqlite3
 
 conn = sqlite3.connect("blog.db")
 curr = conn.cursor()
 
-def selectALL():
+def selectALL(cur):
     cur.execute("SELECT * FROM blog")
-    data = cur.fetchall()
-    for d in data:
-        print(d)
+    try:
+        data = cur.fetchall()
+        for d in data:
+            print(d)
+    except:
+        print("SELECT 오류")
     
-def delete(cur, id):
+    
+def delete(cur, _id):
     sql =  "DELETE FROM blog WHERE id = ?"
-    cur.execute(sql, (id))
+    try:
+        cur.execute(sql, (_id))
+    except:
+        print("DELETE 오류")
+    
     
 def update(cur, _id, subject, content, date):
     sql = """
@@ -44,19 +55,31 @@ def update(cur, _id, subject, content, date):
         date = ?, 
         WHERE id = ?
     """
-    cur.execute(sql, (subject, content, date, id))
+    try:
+        cur.execute(sql, (subject, content, date, _id))
+    except: 
+        print("UPDATE 오류")
 
-def insert(cur, id, subject, content, date):
+
+def insert(cur, _id, subject, content, date):
     sql = "INSERT INTO blog VALUSE (?,?,?,?)"
-    cur.execute(sql, (id, subject, content, date))    
-
+    try:
+        cur.execute(sql, (_id, subject, content, date))    
+    except:
+        print("INSERT 오류")
+    
 #%%
 # insert(curr, 999, "구구", "비둘기는 평화의 상징", "20230831")
+insert(curr, 99, "구구", "비둘기는 평화의 상징", "20230831")
 selectALL(curr)
-update(curr, 99, "구구단", "구구단을 외우자", "20230831")
+update(curr, 99, "구구단", "구구단을 외우자", "20230901")
 selectALL(curr)
 delete(curr, 99)
 selectALL(curr)
 
 #%%
-conn.close()
+# 작업한 내용을 DBMS에 반영
+conn.commit()
+
+# 작업 종료
+conn.close() 

@@ -1,0 +1,22 @@
+sqlite3: 책 047
+tkinter: 책 106
+pyqt : tkinter와 비슷한 qui
+
+047.sqlite3_1.py: 
+047.sqlite3_2.py : 
+
+047.sqlite3_106.tkinter.py:  GUI(그래픽 사용자 인터페이스)
+    원래 106.tkinter.py임 근대 047에서 만들어서 올린 table 내용을 사용하고 
+    blog_sqlite_model.py를 import해서 만듬
+
+blog_sqlite_model.py: 각종기능 저장
+    열고닫기, 커서생성, 커밋 등 db접근에 필요한거
+    select
+    insert
+    select id
+    update
+    delete  등의 쿼리가 들어가있음
+    
+pyqt:
+    https://wikidocs.net/21849
+    https://wikidocs.net/14007
