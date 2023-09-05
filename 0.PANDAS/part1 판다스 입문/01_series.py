@@ -72,6 +72,7 @@ print("values:", sr2.values)
 #%% 
 # seires 슬라이싱
 # 접근방법이 2가지가있음
+# []    value만 나옴
 
 # 1. 인덱스로 접근
 print(sr['이름'])
@@ -83,6 +84,7 @@ print(sr.iloc[0])  # 권고
 
 #%%
 # 범위지정 슬라이싱 :  [ : ]
+# index value 둘다 나옴
 print("[0:3]:", "\n", sr.iloc[0:3])
 print("[1:2]:", "\n", sr.iloc[1:2])
 print("['이름':'성별']:", "\n", sr['이름': '성별'])
@@ -90,12 +92,12 @@ print("['이름':'성별']:", "\n", sr['이름': '성별'])
 
 
 # 몇개만 골라서 슬라이싱 :  [[ , , ]]
-print("[0, 1,3]:", "\n", sr2[[0, 1, 3]])
+## [[]]    index value 둘다 나옴
+print("[0, 1, 3]:", "\n", sr2[[0, 1, 3]])
 
 # 튜플은 안됨
 # print("['이름','성별']:", "\n", sr[['이름', '성별']])
 # KeyError: 'key of type tuple not found and not a MultiIndex'
-
 
 
 
