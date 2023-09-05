@@ -34,7 +34,7 @@ df_seoul.rename({'전입지별':'전입지'}, axis=1, inplace=True)
 # 전입지를 인덱스로 설정
 df_seoul.set_index('전입지', inplace=True)
 
-# loc를 이용해 서울에서 경기도로 이동한 인구 데이터 값만 선택 
+# iloc, loc를 이용해 서울에서 경기도로 이동한 인구 데이터 값만 선택 
 sr_one = df_seoul.loc['경기도']
 
 # x, y축 데이터를 plot 함수에 입력
