@@ -32,17 +32,20 @@ df = pd.read_excel('./서울지역 대학교 위치.xlsx', engine= 'openpyxl')
 seoul_map = folium.Map(location=[37.55,126.98], tiles='Stamen Terrain', 
                         zoom_start=12)
 
+df.rename(columns={'Unnamed: 0': '대학이름'}, inplace=True)
+
 # 대학교 위치정보를 Marker로 표시
-for name, lat, lng in zip(df.index, df.위도, df.경도):
+for name, lat, lng in zip(df.대학이름, df.위도, df.경도):
     folium.Marker([lat, lng], popup=name).add_to(seoul_map)
 
 # 지도를 HTML 파일로 저장하기
 seoul_map.save('./data_made/seoul_colleges.html')
 
 #%%
-print(f{"index: {df.index}")
-print(f{"위도: {df.위도}")
-print(f{"경도: {df.경도}")    
+print(f"index: {df.index}")
+print(f"위도: {df.위도}")
+print(f"경도: {df.경도}")    
+print(df.columns[0])
 #%%
 # 학원위치(37.29171, 127.01241) marker해보기
 

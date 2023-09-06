@@ -110,8 +110,8 @@ print(fd)
 #%%
 
 # 행, 열 삭제
-# 행삭제 : axis = 0
-# 열삭제 : axis = 1
+# 행(index)삭제 : axis = 0
+# 열(column)삭제 : axis = 1
 
 print(fd)
 
