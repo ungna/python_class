@@ -76,6 +76,7 @@ print("values:", sr2.values)
 
 # 1. 인덱스로 접근
 print(sr['이름'])
+print(sr.loc['이름'])
 
 # 2. default번호로 접근
 print(sr[0])       # 권고하지 않음  밑에 지저분하게 뜸
